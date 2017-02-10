@@ -1,26 +1,39 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% 3.times do |time| %>
-      <% if @products[time].images[1] %>
-        <li data-target="#myCarousel" data-slide-to="<%= time %>" <% if time == 1 %> class="active" <% end %>></li>
+    <% if @products.length > 2 %>
+      <% 3.times do |time| %>
+        <% if @products[time].images[1] %>
+          <li data-target="#myCarousel" data-slide-to="<%= time %>" <% if time == 1 %> class="active" <% end %>></li>
+        <% end %>
       <% end %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <% else %>
     <% end %>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <% 3.times do |time| %>
-      <% if @products[time].images[1] %>
-          <div <% if time == 1 %> class="item active" <% else %> class="item" <% end %>>
-            <%= link_to(product_path(@products[time])) do %>
-            <div class="carousel-image" style="background: url('<%= @products[time].images[1] %>') left bottom no-repeat; background-size: cover;"></div>
-            <div class="container">
-              <div class="carousel-caption">
-                <h1><%= @products[time].descriptions[0] %></h1>
+    <% if @products.length > 2 %>
+      <% 3.times do |time| %>
+        <% if @products[time].images[1] %>
+            <div <% if time == 1 %> class="item active" <% else %> class="item" <% end %>>
+              <%= link_to(product_path(@products[time])) do %>
+              <div class="carousel-image" style="background: url('<%= @products[time].images[1] %>') left bottom no-repeat; background-size: cover;"></div>
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1><%= @products[time].descriptions[0] %></h1>
+                </div>
               </div>
+              <% end %>
             </div>
-            <% end %>
-          </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="carousel-image" style="background: url('https://images.unsplash.com/photo-1474146671836-4264f7d85150?dpr=1&auto=compress,format&fit=crop&w=1279&h=557&q=80&cs=tinysrgb&crop=') left bottom no-repeat; background-size: cover;"></div>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Welcome to the Apples Store</h1>
+        </div>
+      </div>
     <% end %>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
