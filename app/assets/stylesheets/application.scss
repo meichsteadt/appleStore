@@ -1,0 +1,40 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+*, h1, h2, h3, h4 ,h5 ,h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav.navbar {
+  margin-bottom: 0;
+}
+
+.nav {
+  li {
+    margin: 0 10px;
+    @media screen and (min-width: 992px) {
+      & {
+        margin: 0 20px;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    & {
+      display: inline-block;
+      float: none !important;
+      margin: 0 auto;
+    }
+  }
+}
+
+.collapse {
+  @media screen and (min-width: 768px) {
+    & {
+      text-align: center;
+    }
+  }
+}
+
+.carousel-caption {
+  top: 0;
+}
