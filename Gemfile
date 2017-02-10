@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'

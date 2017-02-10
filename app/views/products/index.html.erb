@@ -1,20 +1,26 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @products.each_with_index do |product, index| %>
-    <li data-target="#myCarousel" data-slide-to="<%= index %>" <% if index == 0 %> class="active" <% end %>></li>
+    <% 3.times do |time| %>
+      <% if @products[time].images[1] %>
+        <li data-target="#myCarousel" data-slide-to="<%= time %>" <% if time == 1 %> class="active" <% end %>></li>
+      <% end %>
     <% end %>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <% @products.each_with_index do |product, index| %>
-      <div <% if index == 0 %> class="item active" <% else %> class="item" <% end %>>
-        <img class="carousel-image" src="<%= product.images[1] %>" alt="First slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1><%= product.descriptions[0] %></h1>
+    <% 3.times do |time| %>
+      <% if @products[time].images[1] %>
+          <div <% if time == 1 %> class="item active" <% else %> class="item" <% end %>>
+            <%= link_to(product_path(@products[time])) do %>
+            <div class="carousel-image" style="background: url('<%= @products[time].images[1] %>') left bottom no-repeat; background-size: cover;"></div>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1><%= @products[time].descriptions[0] %></h1>
+              </div>
+            </div>
+            <% end %>
           </div>
-        </div>
-      </div>
+      <% end %>
     <% end %>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -25,4 +31,21 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+<div class="thumbnails">
+  <% if @products.length > 3 %>
+    <% 4.times do |time| %>
+      <% if @products[time].images[0] %>
+        <div class="col-xs-3" style="background: url('<%= product.images[0] %>') center no-repeat; background-size:cover">
+        </div>
+      <%end %>
+    <% end %>
+    <% elsif @products.length > 0 %>
+      <% @products.each_with_index do |product, index| %>
+        <% if product.images[0] %>
+          <div class="thumb col-xs-<%= 12/@products.length %>" style="background: url('<%= product.images[0] %>') center no-repeat; background-size:cover">
+          </div>
+        <%end %>
+      <% end %>
+  <% end %>
 </div>

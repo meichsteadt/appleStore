@@ -135,8 +135,35 @@ p.caption {
   }
 }
 
+.carousel-inner > .item {
+  width: 100vw;
+  height: 100vh;
+}
+
 .carousel-image {
-  width: 1279px;
-  height: 557px;
+  height: 100%;
+  width: 100%;
   filter: brightness(70%);
+}
+
+.thumbnails {
+  display: none;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
+  @media screen and (min-width:768px) {
+    display: block;
+  }
+  .thumb {
+    border-left: 2.5px solid white;
+    border-right: 2.5px solid white;
+    height: 250px;
+    filter: brightness(90%);
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
