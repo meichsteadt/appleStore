@@ -1,0 +1,31 @@
+<%= render "layouts/errors", :object => @product %>
+
+  <%= form_for @product do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', required: true%>
+    </div>
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.text_field :price, class: 'form-control', required: true%>
+    </div>
+    <div class="form-group">
+      <%= f.label :country do %>Country of Origin <% end %>
+      <%= f.text_field :country, class: 'form-control', required: true%>
+    </div>
+    <div class="form-group">
+      <%= f.label :images %>
+      <% 3.times do |time| %>
+          <%= f.text_field :images, multiple: true, class: 'form-control', value: @product.images[time] %>
+          <br>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.label :descriptions %>
+      <% 2.times do |time| %>
+        <%= f.text_field :descriptions, multiple: true, class: 'form-control', value: @product.descriptions[time]%>
+        <br>
+      <% end %>
+    </div>
+    <%= f.submit class:'button', style:'float:right;'%>
+  <% end %>

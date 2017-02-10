@@ -30,15 +30,23 @@
             <% @products.each do |product| %>
               <li><%= link_to product.name, product_path(product)%></a></li>
             <% end %>
-            <!-- <li><a href="#">Red Delicious</a></li>
-            <li><a href="#">Fuji</a></li>
-            <li><a href="#">Honeycrisp</a></li>
-            <li><a href="#">Golden Delicious</a></li>
-            <li><a href="#">Pineapple</a></li> -->
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
     <%= yield %>
+
+    <footer>
+      <p>Apples &copy; 2017</p>
+      <ul>
+        <li><%= link_to "Add product", new_product_path %></li>
+        <% if @product %>
+          <% if @product.id %>
+            | <%= link_to 'Edit product', edit_product_path(@product) %>
+            | <%= link_to 'Delete product', product_path(@product), data: {:method => "delete"} %>
+          <% end %>
+        <% end %>
+      </ul>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,13 @@
+<section id="hero">
+  <div class="bg" style="background:url('<%= @product.images[0] %>') no-repeat fixed center; background-size: cover;"></div>
+  <div class="content">
+    <h1><%= @product.name %></h1>
+    <h3><%= @product.descriptions[0] %></h3>
+  </div>
+</section>
+<section id="details">
+  <h3><%= @product.descriptions[1] %></h3>
+  <img class="img-responsive" src="<%= @product.images[2] %>" alt="">
+  <h2>Country of origin: <%= @product.country %></h2>
+  <h1>$<%= @product.price %></h1>
+</section>

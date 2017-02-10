@@ -1,6 +1,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 80px;
+}
+
 *, h1, h2, h3, h4 ,h5 ,h6 {
   font-family: 'Open Sans', sans-serif;
 }
@@ -37,4 +48,95 @@ nav.navbar {
 
 .carousel-caption {
   top: 0;
+}
+
+#hero {
+  width: 100%;
+  height: 572px;
+  text-align: center;
+  position: relative;
+  h1 {
+    margin-top: 0px;
+  }
+  .bg {
+    width: 100%;
+    height: 100%;
+    filter: brightness(70%);
+  }
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+  }
+}
+
+#details {
+  text-align: center;
+  padding-top: 40px;
+  img {
+    display: block;
+    margin: 50px auto;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+  ul {
+    padding-left: 0;
+  }
+  a {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 25px;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  margin-bottom: 10px;
+}
+
+p.caption {
+  color: #777;
+  font-size: 12px;
+}
+
+.new {
+  .col-md-3 {
+    margin-top: 20px;
+    @media screen and (min-width: 992px) {
+      & {
+        float: right;
+        margin-right: 8.5%;
+        ul {
+          margin-top: 65px;
+        }
+      }
+    }
+  }
+}
+
+.carousel-image {
+  width: 1279px;
+  height: 557px;
+  filter: brightness(70%);
 }
