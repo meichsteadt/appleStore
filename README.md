@@ -9,6 +9,7 @@ _A store built on Ruby and Rails_
 ## Specifications
 
 * It allows a user to create, read, update, and delete products
+* The styling was based off of [Apple.com](https://apple.com), all in order to make a minuscule amount of wordplay
 
 ## Prerequisites
 
