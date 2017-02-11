@@ -1,24 +1,53 @@
-# README
+# Apples Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_**Matt Eichsteadt**_
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+_A store built on Ruby and Rails_
 
-* System dependencies
+## Specifications
 
-* Configuration
+* It allows a user to create, read, update, and delete products
 
-* Database creation
+## Prerequisites
 
-* Database initialization
+You will need the following things properly installed on your computer.
 
-* How to run the test suite
+* Ruby
+* Rails
+* Postgres
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation
 
-* Deployment instructions
+* `git clone https://github.com/meichsteadt/appleStore`
+* `bundle install`
+* make sure postgres is running
+* `rake db:create`
+* `rake db:migrate`
+* `rake db:seed` if you want to see the brilliant product creation I did
 
-* ...
+
+
+## Running / Development
+
+* `rails s`
+* Visit your app at [http://localhost:3000](http://localhost:3000).
+
+## Known Bugs
+
+_There are no known bugs at this time._
+
+## Support and contact details
+
+_If you have any issues, questions, comments, scathing reviews please email me at matteichsteadt@gmail.com_
+
+## Technologies Used
+
+_This webpage was made using HTML, CSS, Sass, Bootstrap, Ruby, and Rails._
+
+### License
+
+Copyright (c) 2017 _Matt Eichsteadt_
+
+*Licensed under the GPL License*
