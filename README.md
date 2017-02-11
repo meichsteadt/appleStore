@@ -34,6 +34,7 @@ You will need the following things properly installed on your computer.
 
 * `rails s`
 * Visit your app at [http://localhost:3000](http://localhost:3000).
+* Or check it out [here](https://powerful-hollows-75971.herokuapp.com/).
 
 ## Known Bugs
 
