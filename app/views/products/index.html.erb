@@ -1,5 +1,6 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
+  <%= flash[:notice] %>
   <ol class="carousel-indicators">
     <% if @products.length > 2 %>
       <% 3.times do |time| %>
